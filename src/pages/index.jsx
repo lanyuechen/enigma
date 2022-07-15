@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import Enigma from '@/enigma';
+import EnigmaMachine from './EngimaMachine';
 
 export default () => {
   useEffect(() => {
@@ -26,7 +27,7 @@ export default () => {
   }, []);
   return (
     <div>
-      hello
+      <EnigmaMachine />
     </div>
   );
 }
