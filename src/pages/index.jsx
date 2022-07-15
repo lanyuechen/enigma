@@ -13,7 +13,7 @@ export default () => {
       plugboard: ['a', 'b'],
     });
 
-    const handleKeyPress = (e: KeyboardEvent) => {
+    const handleKeyPress = (e) => {
       console.log(`${e.key} -> ${enigma.transfer(e.key)}`);
     }
 
