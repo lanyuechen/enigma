@@ -1,13 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import Page from '@/pages';
+
 import './global.less';
 
 const App = () => {
   return (
-    <div>
-      hello world
-    </div>
+    <Page />
   );
 }
 
