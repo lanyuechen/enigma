@@ -8,7 +8,7 @@ export default class Enigma {
    * @param {string[]} config.plugboard 设置插线板
    */
   constructor(config) {
-    const { rotors, reflector, plugboard } = config;
+    const { rotors, reflector = ['pgjiyuzcdewlm', 'xokqvftsnahbr'], plugboard } = config;
 
     this.rotors = new Rotors(rotors, reflector);
     this.plugboard = new Plugboard(plugboard);

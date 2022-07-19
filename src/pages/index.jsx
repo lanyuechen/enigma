@@ -9,7 +9,6 @@ export default () => {
         { define: 'xwtzvdegrhajymsqfloucbkipn', cursor: 'a', notch: 'b' },
         { define: 'qgsrwnfbekxvotmaczdlipujyh', cursor: 'a', notch: 'b' },
       ]}
-      reflector={['pgjiyuzcdewlm', 'xokqvftsnahbr']}
       plugboard={['a', 'b']}
     />
   );

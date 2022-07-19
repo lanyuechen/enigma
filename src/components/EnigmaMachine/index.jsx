@@ -10,12 +10,12 @@ import Plugboard from './Plugboard';
 import './style.css';
 
 export default (props) => {
-  const { rotors, reflector, plugboard } = props;
+  const { rotors, plugboard } = props;
   const [lampKey, setLampKey] = useState('');
   const [input, setInput] = useState('');
   const [output, setOutput] = useState('');
 
-  const enigma = useMemo(() => new Enigma({ rotors, reflector, plugboard }), []);
+  const enigma = useMemo(() => new Enigma({ rotors, plugboard }), []);
 
   const handleKeyDown = (key) => {
     const code = enigma.transfer(key);
