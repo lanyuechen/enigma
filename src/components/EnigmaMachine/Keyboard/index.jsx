@@ -1,9 +1,20 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 import './style.less';
 
-export default () => {
+export default (props) => {
+  const { onKeyDown, onKeyUp } = props;
   const [activeKey, setActiveKey] = useState('');
+  const store = useRef({ activeKey }).current;
+
+  useEffect(() => {
+    if (activeKey) {
+      onKeyDown?.(activeKey);
+    } else {
+      onKeyUp?.(store.activeKey);
+    }
+    store.activeKey = activeKey;
+  }, [activeKey]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {

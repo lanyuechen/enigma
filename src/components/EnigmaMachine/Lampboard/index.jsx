@@ -1,10 +1,14 @@
 import './style.less';
 
-export default () => {
+export default (props) => {
+  const { active } = props;
   
   const renderKeys = (keys) => {
     return [...keys].map(letter => (
-      <div key={letter} className="lamp">
+      <div
+        key={letter}
+        className={`lamp ${letter === active.toUpperCase() ? 'lampOn' : ''}`}
+      >
         {letter}
       </div>
     ));

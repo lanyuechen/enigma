@@ -1,33 +1,16 @@
-import { useEffect } from 'react';
-import Enigma from '@/enigma';
-import EnigmaMachine from './EngimaMachine';
+import EnigmaMachine from '@/components/EnigmaMachine';
 
 export default () => {
-  useEffect(() => {
-    const enigma = new Enigma({
-      rotors: [
+  
+  return (
+    <EnigmaMachine
+      rotors={[
         { define: 'ygxdctravhkjfuqszobinwpmle', cursor: 'a', notch: 'b' },
         { define: 'xwtzvdegrhajymsqfloucbkipn', cursor: 'a', notch: 'b' },
         { define: 'qgsrwnfbekxvotmaczdlipujyh', cursor: 'a', notch: 'b' },
-      ],
-      reflector: ['pgjiyuzcdewlm', 'xokqvftsnahbr'],
-      plugboard: ['a', 'b'],
-    });
-
-    const handleKeyPress = (e) => {
-      console.log(`${e.key} -> ${enigma.transfer(e.key)}`);
-    }
-
-    window.addEventListener('keypress', handleKeyPress);
-
-    return () => {
-      window.removeEventListener('keypress', handleKeyPress);
-    }
-
-  }, []);
-  return (
-    <div>
-      <EnigmaMachine />
-    </div>
+      ]}
+      reflector={['pgjiyuzcdewlm', 'xokqvftsnahbr']}
+      plugboard={['a', 'b']}
+    />
   );
 }
